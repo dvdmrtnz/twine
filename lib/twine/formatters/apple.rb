@@ -68,15 +68,15 @@ module Twine
       end
 
       def format_section_header(section)
-        "/********** #{section.name} **********/\n"
+        "\n\n/********** #{section.name} **********/\n"
       end
 
       def key_value_pattern
-        "\"%{key}\" = \"%{value}\";\n"
+        "\"%{key}\" = \"%{value}\";"
       end
 
       def format_comment(definition, lang)
-        "/* #{definition.comment.gsub('*/', '* /')} */\n" if definition.comment
+        "\n/* #{definition.comment.gsub('*/', '* /')} */\n" if definition.comment
       end
 
       def format_key(key)

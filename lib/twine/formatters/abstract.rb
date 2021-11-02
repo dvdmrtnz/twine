@@ -103,7 +103,7 @@ module Twine
 
         header = format_header(lang)
         result = ""
-        result += header + "\n" if header
+        result += header if header
         result += format_sections(processed_twine_file, lang)
       end
 
@@ -130,7 +130,7 @@ module Twine
 
         if section.name && section.name.length > 0
           section_header = format_section_header(section)
-          result += "\n#{section_header}" if section_header
+          result += "#{section_header}" if section_header
         end
 
         definitions.map! { |definition| format_definition(definition, lang) }
